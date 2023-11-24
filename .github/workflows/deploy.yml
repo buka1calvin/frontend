@@ -1,0 +1,22 @@
+name: Deploy to Server
+on:
+  push:
+    branches: [ master ]
+jobs:
+  deploy:
+    name: Deploying
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy to Server
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: ${{ secrets.PORT }}
+        timeout: 1m
+        script: |
+          cd /var/www/cot/web/public_html
+          git clone origin master
+          npm install
+          npm build

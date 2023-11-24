@@ -1,0 +1,15 @@
+.footer {
+  background-color: #186645;
+}
+.imgs {
+  max-width: 100%;
+  border-right: 1px solid white;
+  padding-right: 5%;
+}
+.footer-row {
+  gap: 10%;
+  display: flex;
+}
+.event-rwanda {
+  width: 60%;
+}
